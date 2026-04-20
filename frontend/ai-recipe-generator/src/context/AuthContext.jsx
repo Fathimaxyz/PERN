@@ -13,7 +13,7 @@ export const useAuth = () => {
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);  //changed to true
 
     useEffect(() => {
         //check if user is logged in
@@ -47,7 +47,7 @@ export const AuthProvider = ({ children }) => {
 
     const register = async (name, email, password) => {
         try {   
-            const response = await api.post('/auth/register', { name, email, password });  //or /auth/register
+            const response = await api.post('/auth/register', { name, email, password });  //or /auth/signup
             const { user, token } = response.data.data;
 
             localStorage.setItem('token', token);

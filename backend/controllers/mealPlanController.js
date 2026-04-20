@@ -29,7 +29,7 @@ export const getWeeklyMealPlan = async (req, res,next) => {
             });
         }
 
-        const mealPlan = await MealPlan.getWeeklyPlan(req.user.id, statDate);
+        const mealPlan = await MealPlan.getWeeklyMealPlan(req.user.id, statDate);
 
         res.json({
             success: true,

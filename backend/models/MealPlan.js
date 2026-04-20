@@ -83,7 +83,7 @@ class MealPlan {
         const result = await db.query(
             `SELECT 
             COUNT(*) as total_planned_meals,
-            COUNT(*) FILTER (WHERE meal_date >= CURRENT_DATE AND meal_date <= CURRENT_DATE + INTERVAL '7 days') as this_week_count,
+            COUNT(*) FILTER (WHERE meal_date >= CURRENT_DATE AND meal_date <= CURRENT_DATE + INTERVAL '7 days') as this_week_count
              FROM meal_plans
              WHERE user_id = $1`,
             [userId]

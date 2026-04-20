@@ -1,5 +1,19 @@
+#dependencies
 node_modules
+
 .env
 .env .*
+
 dist
 build
+
+#logs
+*.log
+
+#editor
+.vscode
+.idea
+.DS_Store
+
+frontend/ai-recipe-generator/.env
+backend/.env
